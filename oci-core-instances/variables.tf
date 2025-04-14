@@ -3,11 +3,6 @@ variable "compartment_ocid" {
   type        = string
 }
 
-variable "subnet_id" {
-  description = "Subnet"
-  type        = string
-}
-
 variable "ssh_public_key" {
   description = "Placeholder with the SSH to use in Linux servers"
   type        = string
@@ -17,7 +12,7 @@ variable "images" {
   description = "Placeholder with the OCID of the images to use"
   type = map(object({
     name           = string
-    region_ocid    = string
+    image    = string
   }))
 }
 

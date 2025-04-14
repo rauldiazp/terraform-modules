@@ -27,18 +27,21 @@ variable "instance_params" {
     hostname                            = string
     ad                                  = number
     shape                               = string
-    instance_shape_config_ocpus         = number
-    instance_shape_config_memory_in_gbs = number
+    instance_shape_config_ocpus         = optional(number)
+    instance_shape_config_memory_in_gbs = optional(number)
     os                                  = string
-    # boot_volume_size                    = number
-    # preserve_boot_volume                = bool
     assign_public_ip                    = bool
     subnet_name                         = string
-    # private_ip                          = string    
-    # recovered                           = bool
-    # boot_volume                         = string  
-    # old_cloud_init                      = bool
-    # network_type                        = string
+
+    preserve_boot_volume                = optional(bool)
+    private_ip                          = optional(string)
+    vnic_display_name                   = optional(string)
+    network_type                        = optional(string)
+    baseline_ocpu_utilization           = optional(string)
+    boot_volume_size                    = optional(number)
+    boot_volume_vpus_per_gb             = optional(number)
+    recovered                           = optional(bool)
+    boot_volume                         = optional(string)
   }))
-  default = {}
 }
+

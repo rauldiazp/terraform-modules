@@ -27,5 +27,6 @@ variable "instance_params" {
     baseline_ocpu_utilization           = optional(string)
     os                                  = string
     subnet_name                         = string
+    assign_public_ip                    = bool
   }))
 }

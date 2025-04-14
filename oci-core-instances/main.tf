@@ -22,6 +22,7 @@ resource "oci_core_instance" "this" {
   }
   
   create_vnic_details {
+    assign_public_ip = each.value.assign_public_ip
     subnet_id = each.value.subnet_name
   }
 

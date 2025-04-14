@@ -24,9 +24,8 @@ variable "instance_params" {
     shape                               = string
     instance_shape_config_ocpus         = number
     instance_shape_config_memory_in_gbs = number
-    baseline_ocpu_utilization           = string
+    baseline_ocpu_utilization           = optional(string)
     os                                  = string
     subnet_name                         = string
   }))
 }
-

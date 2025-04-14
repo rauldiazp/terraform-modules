@@ -1,8 +1,8 @@
 resource "oci_core_instance" "this" {
   for_each = var.instance_params
   
-  # availability_domain  = "eu-amsterdam-1-AD-1"
-  availability_domain  = data.oci_identity_availability_domains.ads.availability_domains[each.value.ad - 1].name
+  availability_domain  = "eu-amsterdam-1-AD-1"
+  # availability_domain  = data.oci_identity_availability_domains.ads.availability_domains[each.value.ad - 1].name
   compartment_id       = var.compartment_ocid
   shape                = each.value.shape
   display_name         = each.value.hostname

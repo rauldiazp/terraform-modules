@@ -1,4 +1,4 @@
-resource "oci_resource_manager_stack" "this" {
+resource "oci_resourcemanager_stacks" "this" {
   for_each = var.stack_params
 
   compartment_id = var.compartment_id
